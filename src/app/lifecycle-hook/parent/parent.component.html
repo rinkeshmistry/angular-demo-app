@@ -1,0 +1,6 @@
+<div class="card-css">
+    <h2>Parent Component</h2>
+    <button (click)="changeTitleOfChildComponent()">Click To Change Title Of Child Component</button>
+    <button (click)="hideChildComponent()">Click To Hide Child Component</button>
+    <app-child [title]="title" *ngIf="isHideChildComponent"></app-child>
+</div>
