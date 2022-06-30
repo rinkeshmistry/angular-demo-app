@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InlineTemplatePageComponent } from './inline-template-page/inline-template-page.component';
 import { LifecycleHookModule } from './lifecycle-hook/lifecycle-hook.module'
+import { HighlightDirective } from './appen-gender-icon.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InlineTemplatePageComponent
+    InlineTemplatePageComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

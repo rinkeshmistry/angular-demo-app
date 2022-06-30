@@ -370,6 +370,7 @@
     <div class="title">4. Property Binding Sample</div>
     <div class="content">
       <input type="text" [value]="stringPropertyBinding" style="width: 400px;">
+      {{stringPropertyBinding}}
     </div>
   </div>
 
@@ -377,7 +378,7 @@
   <div class="tutorial-card">
     <div class="title">5. Event Binding Sample</div>
     <div class="content">
-      <button (click)="eventBinding()" style="width: 400px;">Click here to see Event Binding is work or not</button>
+      <button (click)="eventBinding('sdsdsd');test();" style="width: 400px;">Click here to see Event Binding is work or not</button>
     </div>
   </div>
 
@@ -400,7 +401,7 @@
         <input type="radio"  [(ngModel)]="taskStatus" value="completed"  name="taskstatus">Completed
       </fieldset>
       <label class="task-status" [attr.title]="taskStatus === 'completed' ? 'This task completed by Rinkesh Mistry' : null" 
-            [class.tak-status-complete]="taskStatus === 'completed'"
+            [class.tak-status-complete,]="taskStatus === 'completed'"
             [class.tak-status-new]="taskStatus === 'new'"
             [class.tak-status-inprogress]="taskStatus === 'inporgress'">
         Learn Angular 12 in details
@@ -446,6 +447,14 @@
           <div *ngSwitchCase="'Movie2'"><b>Movie2</b> case triggered and its HTML rendered into page</div>
           <div *ngSwitchDefault><b>Default</b> case triggered and its HTML rendered into page</div>
         </container_element>
+      </div>
+    </div>
+
+    <!-- Attribute Directive Sample -->
+    <div class="tutorial-card">
+      <div class="title">11. Attribute Directive Sample</div>
+      <div class="content">
+        <div appHighlight class="pad-10">Color is applied on this element by using Attribute Directive<div>
       </div>
     </div>
 </div>

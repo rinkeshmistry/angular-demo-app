@@ -36,8 +36,16 @@ export class AppComponent {
   //This is use for *ngSwitch Directive
   movieCase:string="Movie1"
 
+ 
+
   //This is use for Event binding
-  eventBinding(){
-    alert("HTML event triggered")
+  eventBinding(test:string){
+    alert(test);
+    alert("HTML event triggered");
+    
+  }
+
+  test(){
+    alert('dfsdfsdfsfs')
   }
 }
