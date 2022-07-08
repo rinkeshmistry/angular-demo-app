@@ -32,6 +32,7 @@
 
   .spacer {
     flex: 1;
+    text-align: center;
   }
 
   .toolbar {
@@ -72,21 +73,7 @@
     flex-direction: column;
   }
 
-  .tutorial-card {
-    
-    margin: 15px;
-  }
-
-  .tutorial-card .title {
-      font-size: 14px;
-      font-weight: bold ;
-  }
-
-  .tutorial-card .content {
-    padding: 10px;
-    border: #888 1px solid;
-    margin: 3px !important;
-  }
+  
   
   svg.material-icons {
     height: 24px;
@@ -323,7 +310,17 @@
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   />
   <span>Welcome</span>
-    <div class="spacer"></div>
+    <div class="spacer">
+      <mat-toolbar>
+        <button mat-button  mat-menu-item [routerLink]="'home'" 
+                [routerLinkActive]="'is-active'">
+          Home
+        </button>
+        <button mat-button  mat-menu-item [routerLink]="'employee'" [routerLinkActive]="'is-active'">
+          Employees
+        </button>
+      </mat-toolbar>
+    </div>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
         <rect width="400" height="400" fill="none"/>
@@ -339,124 +336,8 @@
 </div>
 
 <div class="content" role="main">
-  
-  <!-- Inline Template Sample -->
-  <div class="tutorial-card">
-    <div class="title">1. Inline Template Sample</div>
-    <div class="content">
-      <app-inline-template-page></app-inline-template-page>
-    </div>
-    
-  </div>
-
-  <!-- Lifecycle Hooks ngOnChanges, ngOnInit, ngDoCheck, ngOnDestroy Events Sample -->
-  <div class="tutorial-card">
-    <div class="title">2. Lifecycle Hooks ngOnChanges, ngOnInit, ngDoCheck, ngOnDestroy Events Sample</div>
-    <div class="content">
-      <app-parent></app-parent>
-    </div>
-  </div>
-
-  <!-- String Interpolation Sample -->
-  <div class="tutorial-card">
-    <div class="title">3. String Interpolation Sample</div>
-    <div class="content">
-      {{stringInterpolation}}
-    </div>
-  </div>
-
-  <!-- Property Binding Sample -->
-  <div class="tutorial-card">
-    <div class="title">4. Property Binding Sample</div>
-    <div class="content">
-      <input type="text" [value]="stringPropertyBinding" style="width: 400px;">
-      {{stringPropertyBinding}}
-    </div>
-  </div>
-
-  <!-- Event Binding Sample -->
-  <div class="tutorial-card">
-    <div class="title">5. Event Binding Sample</div>
-    <div class="content">
-      <button (click)="eventBinding('sdsdsd');test();" style="width: 400px;">Click here to see Event Binding is work or not</button>
-    </div>
-  </div>
-
-  <!-- Two Way Binding Sample -->
-  <div class="tutorial-card">
-    <div class="title">6. Two Way Binding Sample</div>
-    <div class="content">
-      <input type="text" [(ngModel)]="stringTwoWayBinding" style="width: 400px;">
-      {{stringTwoWayBinding}}
-    </div>
-  </div>
-
-  <!-- Attribute Binding Sample -->
-  <div class="tutorial-card">
-    <div class="title">7. Attribute Binding Sample</div>
-    <div class="content">
-      <fieldset id="taskstatus" >
-        <input type="radio" [(ngModel)]="taskStatus" value="new" name="taskstatus">New
-        <input type="radio" [(ngModel)]="taskStatus" value="inporgress"  name="taskstatus">In-Progress
-        <input type="radio"  [(ngModel)]="taskStatus" value="completed"  name="taskstatus">Completed
-      </fieldset>
-      <label class="task-status" [attr.title]="taskStatus === 'completed' ? 'This task completed by Rinkesh Mistry' : null" 
-            [class.tak-status-complete,]="taskStatus === 'completed'"
-            [class.tak-status-new]="taskStatus === 'new'"
-            [class.tak-status-inprogress]="taskStatus === 'inporgress'">
-        Learn Angular 12 in details
-      </label>
-    </div>
-  </div>
-
-   <!-- *ngIf Structural Directive Sample -->
-   <div class="tutorial-card">
-    <div class="title">8. *ngIf Structural Directive Sample</div>
-    <div class="content">
-      <fieldset id="message" >
-        <input type="radio" [(ngModel)]="isShowMessage" [value]=true name="message">True
-        <input type="radio" [(ngModel)]="isShowMessage" [value]=false name="message">False
-      </fieldset>
-      <label *ngIf="isShowMessage" class="pad-10">
-        This element has been rendered by using <b>*ngIf</b> Structural Directives.
-      </label>
-    </div>
-   </div>
-
-    <!-- *ngFor Structural Directive Sample -->
-    <div class="tutorial-card">
-      <div class="title">9. *ngFor Structural Directive Sample</div>
-      <div class="content">
-        <ul>
-          <li *ngFor="let movie of movieList">{{movie.value}}</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- *ngSwitch Structural Directive Sample -->
-    <div class="tutorial-card">
-      <div class="title">10. Attribute Binding Sample</div>
-      <div class="content">
-        <fieldset id="movieCases" >
-          <input type="radio" [(ngModel)]="movieCase" value="Movie1" name="movieCases">Movie1
-          <input type="radio" [(ngModel)]="movieCase" value="Movie2"  name="movieCases">Movie2
-          <input type="radio"  [(ngModel)]="movieCase" value="Movie3"  name="movieCases">Movie3
-        </fieldset>
-        <container_element [ngSwitch]="movieCase" class="pad-10">
-          <div *ngSwitchCase="'Movie1'"><b>Movie1</b> case triggered and its HTML rendered into page</div>
-          <div *ngSwitchCase="'Movie2'"><b>Movie2</b> case triggered and its HTML rendered into page</div>
-          <div *ngSwitchDefault><b>Default</b> case triggered and its HTML rendered into page</div>
-        </container_element>
-      </div>
-    </div>
-
-    <!-- Attribute Directive Sample -->
-    <div class="tutorial-card">
-      <div class="title">11. Attribute Directive Sample</div>
-      <div class="content">
-        <div appHighlight class="pad-10">Color is applied on this element by using Attribute Directive<div>
-      </div>
-    </div>
+  <!--Logic to render component dynamically in this DIV by using <router-outlet>-->
+  <router-outlet></router-outlet>
 </div>
 
 
@@ -468,4 +349,4 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+

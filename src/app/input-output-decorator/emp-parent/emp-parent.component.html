@@ -1,0 +1,8 @@
+<div class="app-emp-parent-content">
+    <p>Parent Component!</p>
+    <hr>
+    Total {{technologies.length}} technologies into array list
+    <app-emp-child [data]="technologies" 
+        (dataRefreshEvent)="technologiesRefreshEvent($event)">
+    </app-emp-child>
+</div>

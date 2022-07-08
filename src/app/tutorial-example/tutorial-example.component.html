@@ -1,0 +1,207 @@
+<!-- Inline Template Sample -->
+<div class="tutorial-card">
+    <div class="title">1. Inline Template Sample</div>
+    <div class="content">
+      <app-inline-template-page></app-inline-template-page>
+    </div>
+    
+  </div>
+
+  <!-- Lifecycle Hooks ngOnChanges, ngOnInit, ngDoCheck, ngOnDestroy Events Sample -->
+  <div class="tutorial-card">
+    <div class="title">2. Lifecycle Hooks ngOnChanges, ngOnInit, ngDoCheck, ngOnDestroy Events Sample</div>
+    <div class="content">
+      <app-parent></app-parent>
+    </div>
+  </div>
+
+  <!-- String Interpolation Sample -->
+  <div class="tutorial-card">
+    <div class="title">3. String Interpolation Sample</div>
+    <div class="content">
+      {{stringInterpolation}}
+    </div>
+  </div>
+
+  <!-- Property Binding Sample -->
+  <div class="tutorial-card">
+    <div class="title">4. Property Binding Sample</div>
+    <div class="content">
+      <input type="text" [value]="stringPropertyBinding" style="width: 400px;">
+      {{stringPropertyBinding}}
+    </div>
+  </div>
+
+  <!-- Event Binding Sample -->
+  <div class="tutorial-card">
+    <div class="title">5. Event Binding Sample</div>
+    <div class="content">
+      <button (click)="eventBinding('sdsdsd');test();" style="width: 400px;">Click here to see Event Binding is work or not</button>
+    </div>
+  </div>
+
+  <!-- Two Way Binding Sample -->
+  <div class="tutorial-card">
+    <div class="title">6. Two Way Binding Sample</div>
+    <div class="content">
+      <input type="text" [(ngModel)]="stringTwoWayBinding" style="width: 400px;">
+      {{stringTwoWayBinding}}
+    </div>
+  </div>
+
+  <!-- Attribute Binding Sample -->
+  <div class="tutorial-card">
+    <div class="title">7. Attribute Binding Sample</div>
+    <div class="content">
+      <fieldset id="taskstatus" >
+        <input type="radio" [(ngModel)]="taskStatus" value="new" name="taskstatus">New
+        <input type="radio" [(ngModel)]="taskStatus" value="inporgress"  name="taskstatus">In-Progress
+        <input type="radio"  [(ngModel)]="taskStatus" value="completed"  name="taskstatus">Completed
+      </fieldset>
+      <label class="task-status" [attr.title]="taskStatus === 'completed' ? 'This task completed by Rinkesh Mistry' : null" 
+            [class.tak-status-complete,]="taskStatus === 'completed'"
+            [class.tak-status-new]="taskStatus === 'new'"
+            [class.tak-status-inprogress]="taskStatus === 'inporgress'">
+        Learn Angular 12 in details
+      </label>
+    </div>
+  </div>
+
+   <!-- *ngIf Structural Directive Sample -->
+   <div class="tutorial-card">
+    <div class="title">8. *ngIf Structural Directive Sample</div>
+    <div class="content">
+      <fieldset id="message" >
+        <input type="radio" [(ngModel)]="isShowMessage" [value]=true name="message">True
+        <input type="radio" [(ngModel)]="isShowMessage" [value]=false name="message">False
+      </fieldset>
+      <label *ngIf="isShowMessage" class="pad-10">
+        This element has been rendered by using <b>*ngIf</b> Structural Directives.
+      </label>
+    </div>
+   </div>
+
+    <!-- *ngFor Structural Directive Sample -->
+    <div class="tutorial-card">
+      <div class="title">9. *ngFor Structural Directive Sample</div>
+      <div class="content">
+        <ul>
+          <li *ngFor="let movie of movieList">{{movie.value}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- *ngSwitch Structural Directive Sample -->
+    <div class="tutorial-card">
+      <div class="title">10. Attribute Binding Sample</div>
+      <div class="content">
+        <fieldset id="movieCases" >
+          <input type="radio" [(ngModel)]="movieCase" value="Movie1" name="movieCases">Movie1
+          <input type="radio" [(ngModel)]="movieCase" value="Movie2"  name="movieCases">Movie2
+          <input type="radio"  [(ngModel)]="movieCase" value="Movie3"  name="movieCases">Movie3
+        </fieldset>
+        <container_element [ngSwitch]="movieCase" class="pad-10">
+          <div *ngSwitchCase="'Movie1'"><b>Movie1</b> case triggered and its HTML rendered into page</div>
+          <div *ngSwitchCase="'Movie2'"><b>Movie2</b> case triggered and its HTML rendered into page</div>
+          <div *ngSwitchDefault><b>Default</b> case triggered and its HTML rendered into page</div>
+        </container_element>
+      </div>
+    </div>
+
+    <!-- Attribute Directive Sample -->
+    <div class="tutorial-card">
+      <div class="title">11. Attribute Directive Sample</div>
+      <div class="content">
+        <div appHighlight class="pad-10">Color is applied on this element by using Attribute Directive</div>
+      </div>
+    </div>  
+
+    <!-- Date Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">12. Date Pipe Sample</div>
+      <div class="content">
+        <span><b>Date Without Pipe:</b>&nbsp;{{currentDate}}</span>
+        <span><b>Date With Pipe:</b>&nbsp;{{currentDate | date:'MM/dd/YYYY'}} (by using custom format)</span>
+        <span><b>Date With Pipe:</b>&nbsp;{{currentDate | date:'short'}} (by using short format)</span>
+        <span><b>Date With Pipe:</b>&nbsp;{{currentDate | date:'medium'}} (by using medium format)</span>
+        <span><b>Date With Pipe:</b>&nbsp;{{currentDate | date:'mediumDate'}} (by using mediumDate format)</span>
+      </div>
+    </div>
+
+    <!-- UpperCase Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">13. Upper Case Pipe Sample</div>
+      <div class="content">
+        <span>{{'This text has been converted into uppercase by using Angular Uppercase pipe' | uppercase}}</span>
+      </div>
+    </div>
+
+    <!-- LowerCase Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">14. Lower Case Pipe Sample</div>
+      <div class="content">
+        <span>{{'This text has been converted into lowercase by using Angular Lowercase pipe' | lowercase}}</span>
+      </div>
+    </div>
+
+    <!-- Currency Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">15. Currency Pipe Sample</div>
+      <div class="content">
+        <span>{{price | currency:'INR'}}</span>
+      </div>
+    </div>
+
+    <!-- Decimal Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">16. Decimal Pipe Sample</div>
+      <div class="content">
+        <span>{{decimalNumber | currency:'USD':'symbol':'4.2-4' }}</span>
+      </div>
+    </div>
+
+    <!-- Percentage Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">17. Percentage Pipe Sample</div>
+      <div class="content">
+        <span>{{0.50 | percent }}</span>
+      </div>
+    </div>
+
+    <!-- Custom Pipe Sample -->
+    <div class="tutorial-card">
+      <div class="title">18. Custom Pipe Sample</div>
+      <div class="content">
+        <span>{{6 | weekDay }}</span>
+      </div>
+    </div>
+
+    <!-- Input & Output Decorator Sample -->
+    <div class="tutorial-card">
+      <div class="title">19. Input & Output Decorators Sample</div>
+      <div class="content">
+        <app-emp-parent></app-emp-parent>
+      </div>
+    </div>
+
+     <!-- ViewChild Decorator Sample -->
+     <div class="tutorial-card">
+      <div class="title">20. ViewChild Decorator Sample</div>
+      <div class="content">
+        <button (click)="clickSetValueInTextBox()" style="width: 400px;">Click here to set value into Text Box as programmatically</button>
+        <br>
+        <br>
+        <input type="text" #txtViewChild *ngIf="isShowViewChildTextBox">
+      </div>
+    </div>
+
+     <!-- Third Party Plugins Sample -->
+     <div class="tutorial-card">
+      <div class="title">21. Enabled Third Party Plugin</div>
+      <div class="content">
+        <button mat-raised-button color="primary" style="width:100px ;">Primary</button>
+        <br>
+        <input [ngxTimepicker]="picker" placeholder="Date Time Control Of ngx-material-timepicke plugin" style="width: 400px;">
+        <ngx-material-timepicker #picker></ngx-material-timepicker>
+      </div>
+    </div>
