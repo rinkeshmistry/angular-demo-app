@@ -5,6 +5,9 @@ import { MatButtonModule } from '@angular/material/button'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InlineTemplatePageComponent } from './inline-template-page/inline-template-page.component';
@@ -19,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeService } from './employee.service';
-
+import { AngularFormsModule } from './angular-forms/angular-forms.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { EmployeeService } from './employee.service';
     TutorialExampleComponent,
     PageNotFoundComponent,
     EmployeeListComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,11 @@ import { EmployeeService } from './employee.service';
     MatMenuModule,
     MatToolbarModule,
     MatSlideToggleModule,
-    NgxMaterialTimepickerModule
+    MatTableModule,
+    MatIconModule,
+    MatSelectModule,
+    NgxMaterialTimepickerModule,
+    AngularFormsModule
   ],
   exports:[
     InlineTemplatePageComponent

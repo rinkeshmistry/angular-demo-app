@@ -10,3 +10,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         background-color: rgb(187 182 182 / 50%) !important;
     }
 }
+
+.cust-tabs{
+    .mat-tab-label{
+        color: black !important;
+    }
+}
+
+
+mat-form-field{
+    width: 100%;
+}
+
+.p-20{
+    padding: 20px;
+}
+
+.component-layout{
+    height: 100%;
+    h1{
+        text-align: center;
+        padding: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .content{
+        font-size: 30px;
+        text-align: center;
+    }
+}

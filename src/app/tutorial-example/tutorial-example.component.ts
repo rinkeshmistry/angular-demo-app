@@ -48,6 +48,16 @@ export class TutorialExampleComponent {
   
   // Decimal Pipe
   decimalNumber:number=123.3698585
+
+  //This is use for *ngIf Directive
+  tasksGrisColumns: string[] = ['task_name', 'task_status'];
+  tasksList:Array<KeyValue<string,string>>=[{key:"Angular Session 1", value:"done"},
+                                             {key:"Angular Session 2", value:"done"},
+                                             {key:"Angular Session 3", value:"new"},
+                                             {key:"Angular Session 4", value:"new"},
+                                             {key:"Angular Session 5", value:"inprogress"},
+                                             {key:"Angular Session 6", value:"inprogress"}]
+
   
 
   //This is use for Event binding

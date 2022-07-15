@@ -1,0 +1,108 @@
+<div class="reactive-form-content">
+    <div class="left-panel">
+        <div>
+            <h1>Create Employee</h1>
+        </div>
+        <form [formGroup]="reactiveForm" 
+              (ngSubmit)="saveEmployeeData()">
+
+            <!-- Code of Full Name field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput 
+                       placeholder="Please enter employee name" 
+                       formControlName="fullName">
+                <mat-error *ngIf="reactiveFormControl['fullName'].invalid && 
+                            (reactiveFormControl['fullName'].dirty 
+                             || 
+                             reactiveFormControl['fullName'].touched 
+                             || reactiveFormSubmitted)">
+                    Full Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Code of Gender field -->
+            <div style="margin: .25em 0; padding-bottom:1.34375em;">
+                <mat-label>Gender</mat-label>
+                <br>
+                <mat-radio-group aria-label="Select an option"  formControlName="gender">
+                    <mat-radio-button value="1">Male</mat-radio-button>
+                    &nbsp;&nbsp;
+                    <mat-radio-button value="2">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="reactiveFormControl['gender'].invalid && (reactiveFormControl['gender'].dirty || reactiveFormControl['gender'].touched || reactiveFormSubmitted)">Gender is required</mat-error>
+            </div>
+
+            <!-- Code of Date Of Birth field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="picker"  formControlName="dateOfBirth">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="reactiveFormControl['dateOfBirth'].invalid && (reactiveFormControl['dateOfBirth'].dirty || reactiveFormControl['dateOfBirth'].touched || reactiveFormSubmitted)">Date Of Birth is
+                    required</mat-error>
+            </mat-form-field>
+
+            <!-- Code of Date Of Birth field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Please enter your email address"  formControlName="emailAddress">
+                <mat-error *ngIf="reactiveFormControl['emailAddress'].invalid && (reactiveFormControl['emailAddress'].dirty || reactiveFormControl['emailAddress'].touched || reactiveFormSubmitted)">
+                    <span *ngIf="reactiveFormControl['emailAddress'].errors?.['required']">Email Address is required</span>
+                    <span *ngIf="reactiveFormControl['emailAddress'].errors?.['pattern']">Invalid email addresss</span>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Code of Mobile field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Please enter your mobile number"  formControlName="mobileNumber">
+                <mat-error *ngIf="reactiveFormControl['mobileNumber'].invalid && (reactiveFormControl['mobileNumber'].dirty || reactiveFormControl['mobileNumber'].touched || reactiveFormSubmitted)">Invalid mobile
+                    number</mat-error>
+            </mat-form-field>
+
+            <!-- Code of action buttons -->
+            <div style="text-align: right;">
+                <button mat-stroked-button type="reset" 
+                    (click)="resetForm()">Clear</button>
+                <button mat-stroked-button color="primary" 
+                    type="submit" 
+                    style="margin-left: 20px;">Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="right-panel">
+        <div>
+            <h2><u>Full Name Control States</u></h2>
+            <span><b>Invalid:</b>&nbsp;{{reactiveFormControl['fullName'].invalid}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><b>Dirty:</b>&nbsp;{{reactiveFormControl['fullName'].dirty}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><b>Touched:</b>&nbsp;{{reactiveFormControl['fullName'].touched}}</span>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <h2><u>Form Control States</u></h2>
+            <span><b>Invalid:</b>&nbsp;{{reactiveForm.invalid}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><b>Valid:</b>&nbsp;{{reactiveForm.valid}}</span>
+        </div>
+    </div>
+</div>
+<div class="reactive-form-content">
+    <div>
+        <h2><u>Employee Details Object</u></h2>
+          {{reactiveForm.value | json}}
+    </div>
+</div>
