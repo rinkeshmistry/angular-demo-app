@@ -13,6 +13,7 @@ export class ComponentThreeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
