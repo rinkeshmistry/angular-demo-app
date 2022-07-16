@@ -13,6 +13,7 @@ export class DepartmentListComponent implements OnInit {
   }
 
   createNewDepartment(){
-    this.router.navigate(['department/add']);
+    // Nevagite to route by using query string paramater.
+    this.router.navigate(["department/add"],{queryParams:{id:1,test:'Test'}});
   }
 }
