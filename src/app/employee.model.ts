@@ -4,4 +4,5 @@ export interface EmployeeModel{
     dateOfBirth:Date;
     emailAddress:string;
     mobileNumber?:string;
+    _id:string;
 }

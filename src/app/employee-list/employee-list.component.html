@@ -3,18 +3,82 @@
         <h1 style="margin-bottom:0px;">Employee List</h1>
     </div>
     <div style="text-align:right;padding-right:20px;" >
+        <mat-slide-toggle
+                class="example-margin"
+                color="accent"
+                [(ngModel)]="employeeService.isEnableRouteGuard">
+            {{employeeService.isEnableRouteGuard?'Route guard is enabled for Employee Details component':'Route guard is disabled for Employee Details component'}}
+        </mat-slide-toggle>
+        &nbsp;&nbsp;&nbsp;
         <button mat-raised-button color="primary" style="width:150px; " (click)="createNewEmployee()">Add</button>
     </div>
 </div>
-<br>
-<br>
-<br>
-<div class="cust-mat-slide-toggle-bar">
-    <mat-slide-toggle
-            class="example-margin"
-            color="accent"
-            [(ngModel)]="employeeService.isEnableRouteGuard">
-        {{employeeService.isEnableRouteGuard?'Route guard is enabled for Employee Details component':'Route guard is disabled for Employee Details component'}}
-    </mat-slide-toggle>
+<div class="p-20">
+    <table mat-table [dataSource]="employeeList" style="width:100% ;">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="width:20%;"> ID </th>
+          <td mat-cell *matCellDef="let element" style="width:20%;"> {{element._id}} </td>
+        </ng-container>
+      
+        <!-- Full Name Column -->
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef style="width:20%;"> Full Name </th>
+          <td mat-cell *matCellDef="let element" style="width:20%;"> {{element.fullName}} </td>
+        </ng-container>
+
+        <!-- Gender Column -->
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef style="width:10%;"> Gender </th>
+            <td mat-cell *matCellDef="let element" style="width:10%;"> 
+                 <!-- ng-template code sample -->
+                    <mat-icon aria-hidden="false"  aria-label="Male" *ngIf="element.gender=='1' else gender_female">male</mat-icon>             
+                    <ng-template #gender_female>
+                        <mat-icon aria-hidden="false" aria-label="Female">female</mat-icon>    
+                    </ng-template>
+                <!----------------------------->
+            </td>
+        </ng-container>
+
+        <!-- Date Of Birth Column -->
+        <ng-container matColumnDef="dateOfBirth" >
+            <th mat-header-cell *matHeaderCellDef style="width:10%;"> Date of Birth </th>
+            <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.dateOfBirth | date:'dd/MM/YYYY'}} </td>
+        </ng-container>
+
+        <!-- Email Address Column -->
+        <ng-container matColumnDef="emailAddress">
+            <th mat-header-cell *matHeaderCellDef style="width:15%;"> Email Address </th>
+            <td mat-cell *matCellDef="let element" style="width:15%;"> {{element.emailAddress}} </td>
+        </ng-container>
+
+        <!-- Mobile Number Column -->
+        <ng-container matColumnDef="mobileNumber">
+            <th mat-header-cell *matHeaderCellDef style="width:15%;"> Mobile Number </th>
+            <td mat-cell *matCellDef="let element" style="width:15%;"> {{element.mobileNumber}} </td>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef style="width:10%;"> Action</th>
+            <td mat-cell *matCellDef="let element" style="width:10%;">
+                <button mat-icon-button (click)="createNewEmployee(element._id)">
+                    <mat-icon>edit_outlined</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteEmployee(element._id)">
+                    <mat-icon>delete_outlined</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="employeeGridColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: employeeGridColumns;"></tr>
+
+         <!-- Row shown when there is no matching data that will be provided to the wrapper table. -->
+        <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="7">No data found</td>
+        </tr>
+      </table>
 </div>
 

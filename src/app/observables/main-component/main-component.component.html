@@ -1,18 +1,40 @@
 <div class="p-20">
-    <button mat-stroked-button type="button" color="primary" (click)="generateNewNumber()">Generate New Number</button>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    <button mat-stroked-button type="button" color="warn" (click)="cancleSubscribtion()">Cancel Subscription</button>
-</div>
-<div class="p-20 comp-content">
-    <div class="content">
-        <app-component-one></app-component-one>
+    <h1><u>Code of Observable To Refresh Data Into Multiple Component(RxJs Subject)</u></h1>
+    <div>
+        <button mat-stroked-button type="button" color="primary" (click)="generateNewNumber()">Generate New Number</button>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <button mat-stroked-button type="button" color="warn" (click)="cancleSubscribtion()">Cancel Subscription</button>
     </div>
-    <div class="content">
-        <app-component-two></app-component-two>
+    <br>
+    <div class="comp-content">
+        <div class="content">
+            <app-component-one></app-component-one>
+        </div>
+        <div class="content">
+            <app-component-two></app-component-two>
+        </div>
+        <div class="content">
+            <app-component-three></app-component-three>
+        </div>
     </div>
-    <div class="content">
-        <app-component-three></app-component-three>
+    <br>
+    <h1><u>Code of Map Operator To Transform HTTP Response(RxJs Map Operator)</u></h1>
+    <div>
+        {{transformedEmployeeData | json}}
+    </div>
+    <br>
+    <h1><u>Code of ForkJoin Operator To Call Multiple API Asynchronous</u></h1>
+    <div *ngIf="displayForkJoinOptDiv ">
+        <ul>
+            <li>Total <b>{{comments.length}}</b> comments received as of now from the Code.</li>
+            <li>Total <b>{{photos.length}}</b> employee photos received.</li>
+        </ul>
+    </div>
+    <br>
+    <h1><u>Code of SwitchMap Operator To Call API Sequentially Manner</u></h1>
+    <div *ngIf="displayForkJoinOptDiv ">
+       {{switchMapOptResponse | json}}
     </div>
 </div>
