@@ -35,7 +35,7 @@ export class MainComponentComponent implements OnInit {
     }});
 
 
-    // Logic to call multiple HTTP request into sequentially manner.
+    // // Logic to call multiple HTTP request into sequentially manner.
     const switchMapRequest=this.employeeService.getAllPhotos().pipe(
         switchMap(data=>this.employeeService.getAllCommments()))
     switchMapRequest.subscribe({next:(res)=>{

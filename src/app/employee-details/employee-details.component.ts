@@ -26,7 +26,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Logic to read paramater value from the URL by using Angular Route.
     let pId= this.activatedRoute.snapshot.paramMap.get('id');
-    if(pId!=undefined){
+    if(pId!=undefined && pId!="0"){
       
       this.id=pId;
 
