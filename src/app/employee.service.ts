@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, Subject } from 'rxjs';
 import { EmployeeModel } from './employee.model';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { KeyValue } from '@angular/common';
 
 
