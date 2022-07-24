@@ -4,8 +4,9 @@
 
 export const environment = {
   production: true,
-  serverURL:'https://crudcrud.com/api/a91210edd9c64b7f893633f9f4d67cff',
-  jsonPlaceholderServer:'https://jsonplaceholder.typicode.com'
+  serverURL:'https://crudcrud.com/api/8cf6b2ff5acc48a2a5e77be5530d7651',
+  jsonPlaceholderServer:'https://jsonplaceholder.typicode.com',
+  database:''
 };
 
 /*
