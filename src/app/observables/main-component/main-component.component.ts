@@ -1,7 +1,7 @@
 import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { forkJoin, Subject, switchMap } from 'rxjs';
-import { EmployeeService } from 'src/app/employee.service';
+import { EmployeeService } from '../../employee.service';
 
 @Component({
   selector: 'app-main-component',
